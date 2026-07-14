@@ -1,7 +1,7 @@
 {
   "name": "toolcraft",
   "private": true,
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "ai:check": "node scripts/check-ai-skills.mjs",

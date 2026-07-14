@@ -40,7 +40,7 @@ When the folder becomes a real product, update `src/app/app-acceptance.ts` from 
 
 ## License
 
-This project includes Toolcraft source code governed by the Toolcraft Designer License in `LICENSE.md`. `NOTICE.md` explains that generated apps include Toolcraft runtime, starter, UI component, documentation, and template source code. Designer client work is permitted under the license, and using AI coding assistants or agents such as Codex, Claude, ChatGPT, Cursor, or similar tools to work on generated apps is permitted. Platform, generator, AI software product, app-builder, website-builder, template-marketplace, and resale uses require a separate commercial license from Pixel Point.
+This repository, including the generated Toolcraft runtime, starter, UI component, documentation, and template source code it contains, is licensed under the MIT License in `LICENSE.md`.
 
 ## Local Reference Docs
 
