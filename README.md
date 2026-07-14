@@ -1,11 +1,16 @@
 # Toolcraft
 
+<img width="1200" height="630" alt="og-toolcraft-v2" src="https://github.com/user-attachments/assets/5a5da97c-2ab4-416e-af24-7cee0e82dffb" />
+
 Toolcraft is a starter kit for building focused creative tools with an AI coding
 agent. It provides the common editor foundation—canvas, controls, panels,
 uploads, history, zoom, optional layers and timelines, export support, and
 verification—so you can focus on what the tool should make.
 
 Toolcraft is built by [Pixel Point](https://pixelpoint.io/).
+
+
+
 
 ## Create a project
 
