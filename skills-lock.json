@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "brainstorming": {
+      "source": "/Users/alex/.npm/_npx/1be31936786f1838/node_modules/@pixel-point/toolcraft/toolcraft-skills",
+      "sourceType": "local",
+      "computedHash": "1c3866552b7e4269a33fd1331b29d97663907047affdceda9e903aced8ea042f"
+    },
+    "browser": {
+      "source": "/Users/alex/.npm/_npx/1be31936786f1838/node_modules/@pixel-point/toolcraft/toolcraft-skills",
+      "sourceType": "local",
+      "computedHash": "29c286d888f3c56a851caf260b843b8959244d5d681af09db682135471b4b715"
+    },
+    "figma": {
+      "source": "/Users/alex/.npm/_npx/1be31936786f1838/node_modules/@pixel-point/toolcraft/toolcraft-skills",
+      "sourceType": "local",
+      "computedHash": "f811c6ff9cafa9eb293958937f2f8a856490260af1938822395980ebfe7176ff"
+    },
+    "figma-implement-design": {
+      "source": "/Users/alex/.npm/_npx/1be31936786f1838/node_modules/@pixel-point/toolcraft/toolcraft-skills",
+      "sourceType": "local",
+      "computedHash": "c429aa2fbc3b05bcb1867626cec20e2211f1d4a79955aa739e144d61532510cd"
+    },
+    "systematic-debugging": {
+      "source": "/Users/alex/.npm/_npx/1be31936786f1838/node_modules/@pixel-point/toolcraft/toolcraft-skills",
+      "sourceType": "local",
+      "computedHash": "e4bb643231557f9ad64c59ac7451381e08e8a03e8ee383e247b346f3df88d009"
+    },
+    "writing-plans": {
+      "source": "/Users/alex/.npm/_npx/1be31936786f1838/node_modules/@pixel-point/toolcraft/toolcraft-skills",
+      "sourceType": "local",
+      "computedHash": "a68f772b042c5fd524844b2744dbd71f5196dd5ff8370a49b9706ca050d2adfe"
+    }
+  }
+}

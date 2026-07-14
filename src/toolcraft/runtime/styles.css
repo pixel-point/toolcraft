@@ -1,0 +1,125 @@
+[data-toolcraft-theme][data-toolcraft-theme] {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --bg-foreground: var(--foreground);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --link: #70b0fa;
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: var(--foreground);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: #f8f8f8;
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: #0c8ce9;
+  --accent-foreground: oklch(0.205 0 0);
+  --inspect: #cbaaf9;
+  --attention: #ea733a;
+  --attention-foreground: oklch(0.145 0 0);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: var(--foreground);
+  --border: var(--foreground);
+  --input: var(--foreground);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-link: var(--link);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  color: var(--foreground);
+  color-scheme: light;
+}
+
+[data-toolcraft-theme][data-toolcraft-theme],
+[data-toolcraft-theme][data-toolcraft-theme] *,
+[data-toolcraft-theme][data-toolcraft-theme] *::before,
+[data-toolcraft-theme][data-toolcraft-theme] *::after {
+  cursor: default !important;
+}
+
+[data-toolcraft-theme='dark'][data-toolcraft-theme] {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --bg-foreground: var(--foreground);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --link: #70b0fa;
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: var(--foreground);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: #262626;
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: #0c8ce9;
+  --accent-foreground: oklch(0.985 0 0);
+  --inspect: #9149f5;
+  --attention: #ea733a;
+  --attention-foreground: oklch(0.145 0 0);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: var(--foreground);
+  --border: var(--foreground);
+  --input: var(--foreground);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.556 0 0);
+
+  color-scheme: dark;
+}
+
+[data-toolcraft-canvas-content] {
+  color-scheme: normal;
+}
+
+[data-toolcraft-generated-output] {
+  color-scheme: normal;
+}

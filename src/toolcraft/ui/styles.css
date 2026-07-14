@@ -1,0 +1,291 @@
+.button-radius-tab-control {
+  border-radius: var(--radius-lg);
+}
+
+@custom-variant data-open {
+  &:where([data-state='open']),
+  &:where([data-open]:not([data-open='false'])) {
+    @slot;
+  }
+}
+
+@custom-variant data-closed {
+  &:where([data-state='closed']),
+  &:where([data-closed]:not([data-closed='false'])) {
+    @slot;
+  }
+}
+
+@custom-variant data-checked {
+  &[data-state='checked'],
+  &[data-checked]:not([data-checked='false']) {
+    @slot;
+  }
+}
+
+@custom-variant data-unchecked {
+  &[data-state='unchecked'],
+  &[data-unchecked]:not([data-unchecked='false']) {
+    @slot;
+  }
+}
+
+@custom-variant data-selected {
+  &:where([data-selected='true']) {
+    @slot;
+  }
+}
+
+@custom-variant data-disabled {
+  &:where([data-disabled='true']),
+  &:where([data-disabled]:not([data-disabled='false'])) {
+    @slot;
+  }
+}
+
+@custom-variant data-active {
+  &:where([data-state='active']),
+  &:where([data-active]:not([data-active='false'])) {
+    @slot;
+  }
+}
+
+@custom-variant data-horizontal {
+  &:where([data-orientation='horizontal']) {
+    @slot;
+  }
+}
+
+@custom-variant data-vertical {
+  &:where([data-orientation='vertical']) {
+    @slot;
+  }
+}
+
+.floating-popup-surface {
+  border-color: color-mix(in oklab, var(--border) 12%, transparent);
+  background-color: var(
+    --floating-popup-surface-background,
+    color-mix(in oklab, var(--popover) 98%, transparent)
+  );
+}
+
+.floating-popup-fill {
+  background-color: color-mix(in oklab, var(--popover) 98%, transparent);
+}
+
+.toolcraft-panel-surface {
+  --floating-popup-surface-background: color-mix(in oklab, var(--popover) 75%, transparent);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.toolcraft-scrollbar,
+.toolcraft-scrollbar *,
+[data-slot="native-scroll-container"],
+[data-slot="native-scroll-container"] *,
+.toolcraft-panel-surface,
+.toolcraft-panel-surface * {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--foreground) 10%, transparent)
+    transparent;
+}
+
+[data-toolcraft-controls-mounting="true"],
+[data-toolcraft-controls-mounting="true"] * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.toolcraft-scrollbar::-webkit-scrollbar,
+.toolcraft-scrollbar *::-webkit-scrollbar,
+[data-slot="native-scroll-container"]::-webkit-scrollbar,
+[data-slot="native-scroll-container"] *::-webkit-scrollbar,
+.toolcraft-panel-surface::-webkit-scrollbar,
+.toolcraft-panel-surface *::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.toolcraft-scrollbar::-webkit-scrollbar-track,
+.toolcraft-scrollbar *::-webkit-scrollbar-track,
+[data-slot="native-scroll-container"]::-webkit-scrollbar-track,
+[data-slot="native-scroll-container"] *::-webkit-scrollbar-track,
+.toolcraft-panel-surface::-webkit-scrollbar-track,
+.toolcraft-panel-surface *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toolcraft-scrollbar::-webkit-scrollbar-thumb,
+.toolcraft-scrollbar *::-webkit-scrollbar-thumb,
+[data-slot="native-scroll-container"]::-webkit-scrollbar-thumb,
+[data-slot="native-scroll-container"] *::-webkit-scrollbar-thumb,
+.toolcraft-panel-surface::-webkit-scrollbar-thumb,
+.toolcraft-panel-surface *::-webkit-scrollbar-thumb {
+  min-height: 2.75rem;
+  border: 0 solid transparent;
+  border-radius: 999px;
+  background-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+  background-clip: padding-box;
+}
+
+.toolcraft-scrollbar::-webkit-scrollbar-thumb:hover,
+.toolcraft-scrollbar *::-webkit-scrollbar-thumb:hover,
+[data-slot="native-scroll-container"]::-webkit-scrollbar-thumb:hover,
+[data-slot="native-scroll-container"] *::-webkit-scrollbar-thumb:hover,
+.toolcraft-panel-surface::-webkit-scrollbar-thumb:hover,
+.toolcraft-panel-surface *::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+}
+
+.toolcraft-scrollbar::-webkit-scrollbar-thumb:active,
+.toolcraft-scrollbar *::-webkit-scrollbar-thumb:active,
+[data-slot="native-scroll-container"]::-webkit-scrollbar-thumb:active,
+[data-slot="native-scroll-container"] *::-webkit-scrollbar-thumb:active,
+.toolcraft-panel-surface::-webkit-scrollbar-thumb:active,
+.toolcraft-panel-surface *::-webkit-scrollbar-thumb:active {
+  background-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+}
+
+.toolcraft-scrollbar::-webkit-scrollbar-corner,
+.toolcraft-scrollbar *::-webkit-scrollbar-corner,
+[data-slot="native-scroll-container"]::-webkit-scrollbar-corner,
+[data-slot="native-scroll-container"] *::-webkit-scrollbar-corner,
+.toolcraft-panel-surface::-webkit-scrollbar-corner,
+.toolcraft-panel-surface *::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.floating-popup-separator {
+  background-color: color-mix(in oklab, var(--border) 5%, transparent);
+}
+
+.floating-popup-divider {
+  border-color: color-mix(in oklab, var(--border) 5%, transparent);
+}
+
+.popup-text-xs-plus {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.button-xl-icon-size svg:not([class*="size-"]) {
+  width: var(--button-xl-icon-size);
+  height: var(--button-xl-icon-size);
+}
+
+@keyframes button-loader-sweep {
+  0% {
+    left: 0%;
+    right: 65%;
+  }
+
+  25% {
+    left: 0%;
+    right: 0%;
+  }
+
+  50% {
+    left: 65%;
+    right: 0%;
+  }
+
+  75% {
+    left: 0%;
+    right: 0%;
+  }
+
+  100% {
+    left: 0%;
+    right: 65%;
+  }
+}
+
+:where(.button-loader-indicator) {
+  animation: button-loader-sweep 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+[data-slot="scroll-fade"] {
+  --scroll-fade-size: 1.5rem;
+}
+
+@property --scroll-fade-leading-solid {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --scroll-fade-leading-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --scroll-fade-trailing-solid {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --scroll-fade-trailing-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+[data-slot="scroll-fade-viewport"],
+[data-scroll-fade-viewport],
+[data-slot="scroll-fade-viewport"][data-scroll-fade-viewport] {
+  --scroll-fade-leading-solid: 0px;
+  --scroll-fade-leading-fade: 0px;
+  --scroll-fade-trailing-solid: 0px;
+  --scroll-fade-trailing-fade: 0px;
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--foreground) 10%, transparent) transparent;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-image: var(--scroll-fade-mask-image);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-image: var(--scroll-fade-mask-image);
+  transition:
+    --scroll-fade-leading-solid 80ms linear,
+    --scroll-fade-leading-fade 80ms linear,
+    --scroll-fade-trailing-solid 80ms linear,
+    --scroll-fade-trailing-fade 80ms linear;
+}
+
+[data-slot="scroll-fade-viewport"]::-webkit-scrollbar,
+[data-scroll-fade-viewport]::-webkit-scrollbar,
+[data-slot="scroll-fade-viewport"][data-scroll-fade-viewport]::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+  height: 4px;
+}
+
+[data-scroll-fade-viewport].no-scrollbar,
+[data-slot="scroll-fade-viewport"].no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+[data-scroll-fade-viewport].no-scrollbar::-webkit-scrollbar,
+[data-slot="scroll-fade-viewport"].no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

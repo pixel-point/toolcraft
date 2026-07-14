@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@source ".";
+@source "./toolcraft/ui";
+@source "./toolcraft/runtime";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+@import "@/toolcraft/ui/styles.css";
+@import "@/toolcraft/runtime/styles.css";
+
+@theme {
+  --spacing-field-control: 0.3125rem;
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 0.875rem;
+  --text-xs-plus: 0.8125rem;
+  --text-xs-plus--line-height: 1.125rem;
+  --font-sans: "Inter Variable", sans-serif;
+  --font-mono:
+    ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant focus-visible (&:is([data-focus-visible-mode="keyboard"] *):focus-visible);
+
+:root {
+  --background: oklch(0 0 0);
+  --foreground: oklch(0.977 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --link: #70b0fa;
+  --primary: oklch(0.546 0.215 262.88);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.249 0.07 263.47);
+  --secondary-foreground: oklch(0.977 0 0);
+  --muted: #262626;
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: #0c8ce9;
+  --accent-foreground: oklch(0.985 0 0);
+  --inspect: #9149f5;
+  --attention: #ea733a;
+  --attention-foreground: oklch(0.145 0 0);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: var(--foreground);
+  --border: oklch(0.311 0.013 279.19);
+  --input: oklch(0.311 0.013 279.19);
+  --ring: oklch(0.556 0 0);
+  --radius: 0.375rem;
+  --button-radius-xs: 0.125rem;
+  --button-radius-sm: 0.25rem;
+  --button-radius-md: 0.375rem;
+  --button-radius-lg: 0.5rem;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    box-sizing: border-box;
+    outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+#root {
+  overflow: clip;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--foreground) 10%, transparent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  min-height: 2.75rem;
+  border: 0 solid transparent;
+  border-radius: 999px;
+  background-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+  background-clip: padding-box;
+}
