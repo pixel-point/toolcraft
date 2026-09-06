@@ -16,6 +16,7 @@ export function AppHome(): React.JSX.Element {
       rendererPipelineRegistration={appComposition.rendererPipelineRegistration}
       sceneBoundsProvider={appComposition.sceneBoundsProvider}
       schema={appComposition.schema}
+      svgExportRenderer={appComposition.svgExportRenderer}
     />
   );
 }
