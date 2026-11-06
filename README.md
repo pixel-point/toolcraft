@@ -20,7 +20,7 @@ Built by [Pixel Point](https://pixelpoint.io/).
 
 ### Resources
 
-[Website](https://toolcraft.sh) · [Examples](https://toolcraft.sh/gallery) · [YouTube video](https://youtu.be/-QlmkGZLzFo) · [Blog post](https://pixelpoint.io/blog/how-to-craft-personal-design-tools-with-toolcraft/)
+[Website](https://toolcraft.sh) · [Examples](https://toolcraft.sh/gallery) · [YouTube video](https://youtu.be/-QlmkGZLzFo) · [Blog post](https://pixelpoint.io/blog/how-to-craft-personal-design-tools-with-toolcraft/) · [Meetup Speech](https://youtu.be/yXkJ85hvC5k?si=pQYBgujxscS4ZURO)
 
 ## Getting started
 
