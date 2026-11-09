@@ -128,3 +128,34 @@ test("heartbeat persists the renewed owner by atomic sibling replacement", async
     path.join(value.lockDirectory, "owner.json")]);
   await owner.release();
 });
+
+test("a lock held under Windows rename semantics is read as held, not as a failure", async (context) => {
+  const value = await fixture(context);
+  const clock = { value: 1_000 };
+  const windowsFileSystem = {
+    ...fs,
+    rename: async (from, to) => {
+      const occupied = await fs.stat(to).then(() => true, () => false);
+      if (occupied) {
+        throw Object.assign(new Error(`EPERM: operation not permitted, rename '${from}' -> '${to}'`), {
+          code: "EPERM", dest: to, path: from, syscall: "rename",
+        });
+      }
+      return fs.rename(from, to);
+    },
+  };
+  await acquireToolcraftMotionReferenceLease(
+    settings(value, clock, "owner-a", windowsFileSystem),
+  );
+
+  await assert.rejects(
+    acquireToolcraftMotionReferenceLease(settings(value, clock, "owner-b", windowsFileSystem)),
+    /unexpired publication lease/iu,
+  );
+
+  clock.value = 1_200;
+  const reclaimed = await acquireToolcraftMotionReferenceLease(
+    settings(value, clock, "owner-b", windowsFileSystem),
+  );
+  assert.equal(reclaimed.token, "owner-b");
+});

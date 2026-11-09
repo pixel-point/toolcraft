@@ -110,12 +110,28 @@ async function cleanupResidues(options) {
   }
 }
 
+// Windows reports EPERM, not EEXIST or ENOTEMPTY, when a directory is renamed
+// onto one that already exists.
+async function renameOntoFreshLock(fileSystem, prepared, lockDirectory) {
+  try {
+    await fileSystem.rename(prepared, lockDirectory);
+  } catch (error) {
+    if (error?.code !== "EPERM") throw error;
+    const occupied = await fileSystem.stat(lockDirectory).then(() => true, () => false);
+    if (!occupied) throw error;
+    throw Object.assign(
+      new Error(`source lock already exists: ${lockDirectory}`, { cause: error }),
+      { code: "EEXIST" },
+    );
+  }
+}
+
 async function createFreshLock(options, owner) {
   const prepared = `${options.lockDirectory}.prepare-${owner.token}`;
   try {
     await options.fileSystem.mkdir(prepared);
     await writeNewOwner(options.fileSystem, prepared, owner);
-    await options.fileSystem.rename(prepared, options.lockDirectory);
+    await renameOntoFreshLock(options.fileSystem, prepared, options.lockDirectory);
   } catch (error) {
     await options.fileSystem.rm(prepared, { force: true, recursive: true })
       .catch(() => {});
