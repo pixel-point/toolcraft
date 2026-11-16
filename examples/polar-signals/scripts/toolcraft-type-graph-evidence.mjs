@@ -11,13 +11,18 @@ export function createToolcraftTypeGraphEvidence({
   unknown,
 }) {
   const rootCache = new Map();
+  // `classify` may inspect another root (e.g. an array's element type). Roots
+  // in flight are shared so a type that reaches itself through such a root is
+  // a cycle, like `visiting` within one graph, instead of an unbounded descent.
+  const activeRoots = new Set();
+  let cuts = 0;
+
   function merge(values) {
     return values.includes(dangerous) ? dangerous
       : values.includes(unknown) ? unknown : safe;
   }
 
-  return function inspectTypeGraph(type) {
-    if (rootCache.has(type)) return rootCache.get(type);
+  function inspectRoot(type) {
     const memo = new Map();
     const state = { count: 0 };
     function inspect(candidate, remaining, visiting) {
@@ -40,8 +45,30 @@ export function createToolcraftTypeGraphEvidence({
       }
       return result;
     }
-    const result = inspect(type, maxDepth, new Set());
-    rootCache.set(type, result);
+    return inspect(type, maxDepth, new Set());
+  }
+
+  return function inspectTypeGraph(type) {
+    if (rootCache.has(type)) return rootCache.get(type);
+    if (activeRoots.has(type)) {
+      cuts += 1;
+      return safe;
+    }
+    if (activeRoots.size >= maxDepth) {
+      cuts += 1;
+      return unknown;
+    }
+    const cutsBefore = cuts;
+    activeRoots.add(type);
+    let result;
+    try {
+      result = inspectRoot(type);
+    } finally {
+      activeRoots.delete(type);
+    }
+    // A result cut short inside an enclosing root is partial and must not
+    // answer later callers; the outermost root sees every cycle through itself.
+    if (cuts === cutsBefore || activeRoots.size === 0) rootCache.set(type, result);
     return result;
   };
 }
